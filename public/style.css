@@ -21,7 +21,6 @@ form div {
 }
 
 div.mainContent {
-  height: 10em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,8 +28,6 @@ div.mainContent {
 }
 
 h1#title {
-  margin-top: 1300px;
-  margin-bottom: 100px;
   color: black;
 }
 
@@ -38,21 +35,11 @@ h1 {
   padding: 10px;
 }
 
-h1#bathrooms {
-  margin-bottom: 500px;
-}
-
-h1#teacherDesks {
-  margin-top: 200px;
-  margin-bottom: 100px;
-}
-
 
 .tables {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  margin-bottom: 300px;
 }
 
 .table {

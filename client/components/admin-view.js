@@ -64,7 +64,7 @@ class AdminView extends React.Component {
     return (
     <div className="mainContent">
       <h1 id="title">PAIR PROGRAMMING SEATING CHART ADMIN VIEW</h1>
-      <h1 id="bathrooms">Bathrooms</h1>
+      <h1 id="teacherDesks">Fellows' Desks</h1>
       <div className="tables">
         <SeatingChart />
         {
@@ -85,8 +85,7 @@ class AdminView extends React.Component {
           </div> : null
         }
       </div>
-      <h1 id="teacherDesks">Fellows' Desks</h1>
-      <br /><br />
+      <h1 id="bathrooms">Bathrooms</h1>
     </div>)
   }
 };
