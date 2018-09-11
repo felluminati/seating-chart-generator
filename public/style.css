@@ -43,17 +43,16 @@ h1 {
 }
 
 .table {
-  width: 500px;
+  width: 350px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 50px;
 }
 
 .trio, .group {
-  height: 200px;
-  width: 200px;
-  padding: 10px;
+  height: 150px;
+  width: 150px;
+  padding: 2x;
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -61,19 +60,13 @@ h1 {
 }
 
 .trio, .group {
-  border: 5px solid #696969;
+  border: 1px solid #696969;
 }
 
 
 button#generate-btn {
   background: #696969;
-  background-image: -webkit-linear-gradient(top, #696969, #696969);
-  background-image: -moz-linear-gradient(top, #696969, #696969);
-  background-image: -ms-linear-gradient(top, #696969, #696969);
-  background-image: -o-linear-gradient(top, #696969, #696969);
   background-image: linear-gradient(to bottom, #696969, #696969);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
   border-radius: 10px;
   font-family: Arial;
   color: #ffffff;
@@ -85,10 +78,6 @@ button#generate-btn {
 
 #generate-btn:hover {
   background: #696969;
-  background-image: -webkit-linear-gradient(top, #696969, #696969);
-  background-image: -moz-linear-gradient(top, #696969, #696969);
-  background-image: -ms-linear-gradient(top, #696969,#696969);
-  background-image: -o-linear-gradient(top, #696969,#696969);
   background-image: linear-gradient(to bottom, #696969,#696969);
   text-decoration: none;
 }
@@ -96,20 +85,14 @@ button#generate-btn {
 p {
   font-size: 1.3em;
   padding: 0.2em;
-  border: 2px solid #696969;
+  background: #dedede;
   margin-top: 5px;
   text-align: center;
 }
 
 button#copy-link {
   background: #008000;
-  background-image: -webkit-linear-gradient(top, #008000, #008000);
-  background-image: -moz-linear-gradient(top, #008000, #008000);
-  background-image: -ms-linear-gradient(top, #008000, #008000);
-  background-image: -o-linear-gradient(top, #008000, #008000);
   background-image: linear-gradient(to bottom, #008000, #008000);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
   border-radius: 10px;
   font-family: Arial;
   color: #ffffff;
