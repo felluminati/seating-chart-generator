@@ -1,32 +1,40 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
-  <div>
-    <nav>
-      {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/">Student View</Link>
-          <Link to="/adminView">Admin View</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
+const Navbar = ({ handleClick, isLoggedIn, flipView }) => (
+  <nav className="nav">
+    {isLoggedIn ? (
+      <Fragment>
+        {/* The navbar will show these links after you log in */}
+        <Link to="/" className="nav-item">
+          Student View
+        </Link>
+        <Link to="/adminView" className="nav-item">
+          Admin View
+        </Link>
+        <a href="#" onClick={handleClick} className="nav-item">
+          Logout
+        </a>
+        <div className="nav-item" style={{marginLeft: 'auto'}}>
+          <input id="flipView" className="switch" type="checkbox" onChange={flipView} />
+          <label htmlFor="flipView">Flip View</label>
         </div>
-      ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Instructor Login</Link>
-          <Link to="/">Seating Chart</Link>
-          {/*<Link to="/signup">Sign Up</Link>*/}
-        </div>
-      )}
-    </nav>
-    <hr />
-  </div>
+      </Fragment>
+    ) : (
+      <Fragment>
+        {/* The navbar will show these links before you log in */}
+        <Link to="/login" className="nav-item">
+          Instructor Login
+        </Link>
+        <Link to="/" className="nav-item">
+          Seating Chart
+        </Link>
+      </Fragment>
+    )}
+  </nav>
 )
 
 /**
@@ -42,6 +50,10 @@ const mapDispatch = dispatch => {
   return {
     handleClick() {
       dispatch(logout())
+    },
+    flipView() {
+      const main = document.getElementsByTagName('main')[0];
+      main.classList.toggle('is-flipped');
     }
   }
 }

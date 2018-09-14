@@ -62,31 +62,27 @@ class AdminView extends React.Component {
     const {user} = this.props;
     const {encodedUrl} = this.state;
     return (
-    <div className="mainContent">
+    <main className="mainContent">
       <h1 id="title">PAIR PROGRAMMING SEATING CHART ADMIN VIEW</h1>
-      <h1 id="teacherDesks">Fellows' Desks</h1>
-      <div className="tables">
-        <SeatingChart />
-        {
-          user.isAdmin ?
-          <div className="table">
-              <h1>Paste Pairs In Box</h1>
-              <Form>
-                <TextArea placeholder='Insert Students Pairs Here' onChange={(evt) => this.handleChange(evt)} />
-              </Form>
-              <button id="generate-btn" onClick={(evt) => {this.generateStudentSeats(evt)}}>Generate Seats!</button>
-              {
-                encodedUrl.length ?
-                <div>
-                  <button id="copy-link" onClick={() => {copy(this.state.encodedUrl)}}>Copy Link</button>
-                </div>
-                : null
-              }
-          </div> : null
-        }
-      </div>
-      <h1 id="bathrooms">Bathrooms</h1>
-    </div>)
+      {
+        user.isAdmin &&
+        <div className="admin-form">
+            <h2>Paste Pairs In Box</h2>
+            <Form>
+              <TextArea placeholder='Insert Students Pairs Here' onChange={(evt) => this.handleChange(evt)} />
+            </Form>
+            <button id="generate-btn" onClick={(evt) => {this.generateStudentSeats(evt)}}>Generate Seats!</button>
+            {
+              encodedUrl.length ?
+              <div>
+                <button id="copy-link" onClick={() => {copy(this.state.encodedUrl)}}>Copy Link</button>
+              </div>
+              : null
+            }
+        </div>
+      }
+      <SeatingChart />
+    </main>)
   }
 };
 
