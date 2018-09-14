@@ -10,9 +10,14 @@ label {
   display: block;
 }
 
-nav a {
-  display: inline-block;
-  margin: 1em;
+.nav {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.nav-item {
+  padding: 1rem;
 }
 
 form div {
@@ -20,21 +25,33 @@ form div {
   display: inline-block;
 }
 
-div.mainContent {
-  display: flex;
+.mainContent {
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: flex;
+  flex-flow: column;
+  margin: 2rem 0;
 }
 
 h1#title {
   color: black;
 }
 
-h1 {
-  padding: 10px;
+.seating-chart {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
+.is-flipped .seating-chart {
+  transform: scale(-1, -1);
+}
+
+.is-flipped .seating-chart p,
+.is-flipped .seating-chart h2 {
+  transform: scale(-1, -1);
+}
 
 .tables {
   display: flex;
@@ -43,16 +60,15 @@ h1 {
 }
 
 .table {
-  width: 350px;
+  width: 400px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .trio, .group {
-  height: 150px;
-  width: 150px;
-  padding: 2x;
+  height: 160px;
+  width: 160px;
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -69,9 +85,9 @@ button#generate-btn {
   background-image: linear-gradient(to bottom, #696969, #696969);
   border-radius: 10px;
   font-family: Arial;
-  color: #ffffff;
+  color: #fff;
   font-size: 20px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   text-decoration: none;
   text-align: center;
 }
@@ -83,10 +99,9 @@ button#generate-btn {
 }
 
 p {
-  font-size: 1.3em;
-  padding: 0.2em;
-  background: #dedede;
-  margin-top: 5px;
+  font-size: 1.25em;
+  padding: 0.25em;
+  background-color: #eaeaea;
   text-align: center;
 }
 
@@ -97,7 +112,7 @@ button#copy-link {
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   text-decoration: none;
   text-align: center;
 }
@@ -108,4 +123,61 @@ button#copy-link {
   width: 50%;
   text-align: center;
   font-size: 2em;
+}
+
+/**
+ * ADMIN FORM
+ */
+.admin-form {}
+
+/**
+ * TOGGLE SWITCH
+ */
+.switch {
+  opacity: 0;
+  outline: 0;
+  position: absolute;
+  user-select: none;
+}
+
+.switch + label {
+  color: #a5a5a5;
+  cursor: pointer;
+  padding-left: 3.5rem;
+  position: relative;
+  transition: all .25s ease-out;
+  user-select: none;
+}
+
+.switch + label::before {
+  background-color: #d5d5d5;
+  border: 1px solid transparent;
+  border-radius: 2rem;
+  content: "";
+  height: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+}
+
+.switch + label::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 1rem;
+  position: absolute;
+  top: .25rem;
+  left: .25rem;
+  transform: translate3d(0, 0, 0);
+  transition: all .25s ease-out;
+  width: 1rem;
+}
+
+.switch:checked + label::after {
+  left: 1.625rem;
+}
+
+.switch:checked + label::before {
+  background-color: #0074d9;
 }

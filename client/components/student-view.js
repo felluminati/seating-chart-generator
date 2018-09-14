@@ -17,10 +17,9 @@ export default class StudentView extends React.Component {
 
   render() {
     return (
-    <div className="mainContent">
-      <h1 id="teacherDesks">Fellows' Desks</h1>
+    <main className="mainContent">
+      <h1 id="title">PAIR PROGRAMMING SEATING CHART</h1>
       <SeatingChart />
-      <h1 id="bathrooms">Bathrooms</h1>
-    </div>)
+    </main>)
   }
 };
