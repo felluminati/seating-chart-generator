@@ -26,12 +26,14 @@ form div {
 }
 
 .mainContent {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
   margin: 2rem 0;
 }
 
 h1#title {
   color: black;
-  text-align: center;
 }
 
 .seating-chart {
@@ -122,6 +124,11 @@ button#copy-link {
   text-align: center;
   font-size: 2em;
 }
+
+/**
+ * ADMIN FORM
+ */
+.admin-form {}
 
 /**
  * TOGGLE SWITCH

@@ -64,11 +64,10 @@ class AdminView extends React.Component {
     return (
     <main className="mainContent">
       <h1 id="title">PAIR PROGRAMMING SEATING CHART ADMIN VIEW</h1>
-      <SeatingChart />
       {
-        user.isAdmin ?
-        <div className="table">
-            <h1>Paste Pairs In Box</h1>
+        user.isAdmin &&
+        <div className="admin-form">
+            <h2>Paste Pairs In Box</h2>
             <Form>
               <TextArea placeholder='Insert Students Pairs Here' onChange={(evt) => this.handleChange(evt)} />
             </Form>
@@ -80,8 +79,9 @@ class AdminView extends React.Component {
               </div>
               : null
             }
-        </div> : null
+        </div>
       }
+      <SeatingChart />
     </main>)
   }
 };
