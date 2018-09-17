@@ -18,10 +18,6 @@ const Navbar = ({ handleClick, isLoggedIn, flipView }) => (
         <a href="#" onClick={handleClick} className="nav-item">
           Logout
         </a>
-        <div className="nav-item" style={{marginLeft: 'auto'}}>
-          <input id="flipView" className="switch" type="checkbox" onChange={flipView} />
-          <label htmlFor="flipView">Flip View</label>
-        </div>
       </Fragment>
     ) : (
       <Fragment>
@@ -34,6 +30,10 @@ const Navbar = ({ handleClick, isLoggedIn, flipView }) => (
         </Link>
       </Fragment>
     )}
+    <div className="nav-item" style={{marginLeft: 'auto'}}>
+      <input id="flipView" className="switch" type="checkbox" onChange={flipView} />
+      <label htmlFor="flipView">Flip View</label>
+    </div>
   </nav>
 )
 
